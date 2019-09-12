@@ -1,0 +1,25 @@
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class HigherOrder {
+
+	public static void main(String[] args) {
+		
+		List<String> temp = Stream.of("A","B","C","D","E")
+				.map(new Function<String, String>() {
+					@Override
+					public String apply(String s) {
+						return s.toLowerCase();
+					}
+				}).collect(Collectors.toList());
+		
+		/*Stream.of("A","B","C")
+		.map(s -> s.toLowerCase())
+		.collect(Collectors.toList());*/
+    
+		System.out.println(temp);
+	}
+
+}
